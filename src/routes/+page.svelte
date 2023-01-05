@@ -1,16 +1,14 @@
-<script>
-	/** @typedef { import ('./myTypes.d').Weather} Weather } */
-	/** @typedef { import ('./myTypes.d').CompState} CompState } */
+<script lang="ts">
+	import type { CompState } from './myTypes';
 
 	import { getData } from './api_data';
-  import { fly } from "svelte/transition";
+	import { fly } from 'svelte/transition';
 
 	function lookup() {
 		getData(place).then((theState) => (myState = theState));
 	}
 
-	/** @type CompState */
-	let myState = {
+	let myState: CompState = {
 		state: 'idle',
 		payload: {},
 		error: ''
@@ -34,7 +32,7 @@
 		<h2 class="subtitle">{myState.payload.temperature}</h2>
 		<p><b>Sky:</b>{myState.payload.sky}</p>
 	{:else if myState.state === 'fail'}
-		<div class="notification is-danger" transition:fly={{x: 100, duration: 1500}}>
+		<div class="notification is-danger" transition:fly={{ x: 100, duration: 1500 }}>
 			{myState.error}
 		</div>
 	{/if}

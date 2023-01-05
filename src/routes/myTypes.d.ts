@@ -1,4 +1,4 @@
-export type Weather = {
+type Weather = {
   air_pressure: number;
   collectionId: string;
   collectionName: string;
