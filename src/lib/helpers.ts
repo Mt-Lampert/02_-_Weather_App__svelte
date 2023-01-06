@@ -1,3 +1,5 @@
+import type { Weather } from "./myTypes";
+
 /** 
   * returns an SVG clipart file name depending on weather conditions
   * 
@@ -27,4 +29,18 @@ export function getSVGfor(desc: string): string {
       return "EH?";
   }
   return mySVG;
+}
+
+export let defaultCompState: Weather = {
+  air_pressure: 0,
+  collectionId: '',
+  collectionName: '',
+  created: '',
+  humidity: 0,
+  id: 0,
+  place: '',
+  sky: '',
+  temperature: -999,
+  updated: '',
+  wind: -1
 }
