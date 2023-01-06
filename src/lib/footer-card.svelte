@@ -1,10 +1,8 @@
 <script lang="ts">
-	import { getSVGfor } from './helpers';
-
 	export let desc = 'sunny';
-	console.log(`inside the footer card the sky is ${desc}`);
+	export let image = 'sunny.svg';
 
-	$: mySVG = 'images/' + getSVGfor(desc);
+	$: mySVG = 'images/' + image;
 </script>
 
 <div class="footer-card">
