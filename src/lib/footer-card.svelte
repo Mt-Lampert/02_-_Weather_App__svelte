@@ -6,16 +6,17 @@
 </script>
 
 <div class="footer-card">
-	<figure>
-		<img src={mySVG} alt="weather symbol" />
-	</figure>
+	<p><img src={mySVG} alt="weather symbol" width="50" /></p>
 	<p>{desc}</p>
 </div>
 
 <style lang="scss">
 	.footer-card {
-		figure {
-			width: 100px;
+		display: flex;
+		flex-direction: column;
+		width: 100px;
+		p {
+			text-align: center;
 		}
 	}
 </style>
