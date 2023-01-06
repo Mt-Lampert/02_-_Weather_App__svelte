@@ -1,8 +1,10 @@
 <script lang="ts">
+	import Footer from '$lib/footer.svelte';
 	import type { CompState } from './myTypes';
 
 	import { getData } from './api_data';
 	import { fly } from 'svelte/transition';
+	import { defaultCompState } from '$lib/helpers';
 
 	function lookup() {
 		getData(place).then((theState) => (myState = theState));
@@ -10,7 +12,7 @@
 
 	let myState: CompState = {
 		state: 'idle',
-		payload: {},
+		payload: defaultCompState,
 		error: ''
 	};
 
@@ -37,3 +39,15 @@
 		</div>
 	{/if}
 </section>
+
+{#if myState.state === 'success'}
+	<section class="section footer">
+		<Footer data={myState.payload} />
+	</section>
+{/if}
+
+<style lang="scss">
+	.footer {
+		margin-top: 5em;
+	}
+</style>
