@@ -26,7 +26,7 @@
 			<div class="control">
 				<input class="input" name="place" type="text" placeholder="The place" bind:value={place} />
 			</div>
-			<div><button class="button">Lookup</button></div>
+			<div class="ml-4"><button class="button is-info has-text-weight-bold">Lookup</button></div>
 		</div>
 	</form>
 </section>
@@ -39,7 +39,7 @@
 			sky={myState.payload.sky}
 		/>
 	{:else if myState.state === 'fail'}
-		<div class="notification is-danger" transition:fly={{ x: 100, duration: 1500 }}>
+		<div class="notification is-danger" in:fly={{ x: 100 }}>
 			{myState.error}
 		</div>
 	{/if}
