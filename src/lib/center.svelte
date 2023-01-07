@@ -9,9 +9,12 @@
 </script>
 
 <div class="center">
-	<p>
-		<img src={skyImage} alt="Sky Clipart" />
-	</p>
-	<h1 class="title">{place}</h1>
-	<h2 class="subtitle">{temperature}</h2>
+	<h1 class="has-text-centered">
+		<img src={skyImage} alt="Sky Clipart" width="225" />
+	</h1>
+	<h1 class="title has-text-centered mt-5">{place}</h1>
+	<h2 class="title has-text-centered">{temperature}&deg;C</h2>
 </div>
+
+<style lang="scss">
+</style>

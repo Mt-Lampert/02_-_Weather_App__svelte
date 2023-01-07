@@ -9,6 +9,9 @@ import type { Weather } from "./myTypes";
 export function getSVGfor(desc: string): string {
   let mySVG = "";
   switch (desc) {
+    case "cloudless":
+      mySVG = "cloudless.svg";
+      break;
     case "cloudy":
       mySVG = "cloudy.svg";
       break;
@@ -31,7 +34,7 @@ export function getSVGfor(desc: string): string {
   return mySVG;
 }
 
-export let defaultCompState: Weather = {
+export let defaultCompState: Weather = {  // {{{
   air_pressure: 0,
   collectionId: '',
   collectionName: '',
@@ -43,4 +46,4 @@ export let defaultCompState: Weather = {
   temperature: -999,
   updated: '',
   wind: -1
-}
+} // }}}

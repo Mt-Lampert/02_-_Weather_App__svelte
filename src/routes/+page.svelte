@@ -20,18 +20,18 @@
 	let place = '';
 </script>
 
-<section class="top section is-flex">
+<section class="top section is-flex is-justify-content-center">
 	<form on:submit|preventDefault={lookup}>
-		<div class="field">
+		<div class="field is-flex">
 			<div class="control">
 				<input class="input" name="place" type="text" placeholder="The place" bind:value={place} />
 			</div>
+			<div><button class="button">Lookup</button></div>
 		</div>
-		<div><button class="button">Lookup</button></div>
 	</form>
 </section>
 
-<section class="section center">
+<section class="section center is-flex is-justify-content-center">
 	{#if myState.state === 'success'}
 		<Center
 			place={myState.payload.place}
